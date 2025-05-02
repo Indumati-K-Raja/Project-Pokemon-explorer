@@ -1,6 +1,19 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { fetchPokemonList } from '../utils/api';
 
+import CompareButton from './CompareButton';
+
+const PokemonCard = ({ pokemon }) => {
+  return (
+    <div className="pokemon-card">
+      {/* existing content */}
+      <h3>{pokemon.name}</h3>
+      <CompareButton pokemon={pokemon} />
+    </div>
+  );
+};
+
+
 const PokemonContext = createContext();
 
 export const PokemonProvider = ({ children }) => {

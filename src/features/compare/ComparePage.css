@@ -1,0 +1,20 @@
+.compare-page {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .compare-grid {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    padding: 1rem 0;
+  }
+  
+  .compare-card {
+    min-width: 200px;
+    background: #f4f4f4;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  }
+  
