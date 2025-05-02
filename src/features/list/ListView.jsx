@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
-import { PokemonContext } from '../../context/PokemonContext';
+import { usePokemonContext } from '../../context/PokemonContext';
 import { Link } from 'react-router-dom';
+
+//const {pokemonList}= usePokemonContext();
 
 const ListView = () => {
   const {
@@ -11,7 +13,7 @@ const ListView = () => {
     toggleFavorite,
     loading,
     error,
-  } = useContext(PokemonContext);
+  } = usePokemonContext();
 
   const [types, setTypes] = useState([]);
   const [selectedTypes, setSelectedTypes] = useState([]);

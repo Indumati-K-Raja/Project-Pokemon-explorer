@@ -1,0 +1,96 @@
+.App {
+  text-align: center;
+  padding: 20px;
+  font-family: Times New Roman, sans-serif;
+  background-color: #b4d8d1;
+  font-size: 20px;
+  
+}
+
+input, select {
+  margin: 10px;
+  padding: 8px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: Times New Roman, sans-serif;
+  margin-bottom: 25px;
+  
+
+}
+
+.pokemon-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #b4d8d1
+
+}
+
+.pokemon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 200px;
+  padding: 1rem;
+  margin: 1rem;
+
+  background-color: #ffffff;
+  border: 2px solid #e0e0e0;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.pokemon-card:hover {
+  transform: translateY(-5px);
+  border-color: #ffa5b0;
+}
+
+.pokemon-card.selected {
+  border-color: #ff4c60;
+  background-color: #fff3f6;
+}
+
+.pokemon-img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.pokemon-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #333;
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.compare-btn {
+  background-color: #ff4c60;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.compare-btn:hover {
+  background-color: #ff2d4a;
+}
+.pokemon-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+}

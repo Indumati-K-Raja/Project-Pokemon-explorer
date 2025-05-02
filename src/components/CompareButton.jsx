@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import { PokemonContext } from '../contexts/PokemonContext';
+import { usePokemonContext } from '../context/PokemonContext';
 import { toast } from 'react-toastify';
 
 const CompareButton = ({ pokemon }) => {
-  const { compareList, addToCompare, removeFromCompare } = useContext(PokemonContext);
+  const { compareList, addToCompare, removeFromCompare } = useContext(usePokemonContext);
   const isInCompare = compareList.some(p => p.id === pokemon.id);
 
   const handleClick = () => {

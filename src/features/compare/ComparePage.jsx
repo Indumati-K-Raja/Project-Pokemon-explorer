@@ -1,6 +1,6 @@
 import React from 'react';
-import { usePokemonContext } from '../../contexts/PokemonContext';
-import '../../styles/ComparePage.css'; // Optional: for styling if needed
+import { usePokemonContext } from '../../context/PokemonContext';
+//import '../../styles/ComparePage.css'; // Optional: for styling if needed
 
 const ComparePage = () => {
   const { compareList, toggleCompare } = usePokemonContext();

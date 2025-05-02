@@ -9,6 +9,7 @@ const AppRouter = () => {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<div>It wirjs!</div>} />
         <Route path="/" element={<PokemonListPage />} />
         <Route path="/pokemon/:id" element={<PokemonDetailPage />} />
         <Route path="/favorites" element={<FavoritesPage />} />

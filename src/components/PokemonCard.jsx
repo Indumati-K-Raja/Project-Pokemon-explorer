@@ -1,38 +1,33 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { usePokemonContext } from '../contexts/PokemonContext';
-import FavoriteButton from './FavoriteButton';
-import '../styles/PokemonCard.css';
+import { usePokemonContext } from '../../context/PokemonProvider';
+import './PokemonCard.css'; // Make sure to create this file or move styles to App.css
 
-const PokemonCard = ({ pokemon }) => {
-  const { favorites, toggleFavorite, compareList, toggleCompare } = usePokemonContext();
+function PokemonCard({ pokemon }) {
+  const { addToCompare, removeFromCompare, compareList } = usePokemonContext();
 
-  const isFavorite = favorites.includes(pokemon.id);
-  const isInCompare = compareList.some(p => p.id === pokemon.id);
+  const isInCompareList = compareList.some(p => p.id === pokemon.id);
+
+  const handleCompareClick = () => {
+    if (isInCompareList) {
+      removeFromCompare(pokemon.id);
+    } else {
+      addToCompare(pokemon);
+    }
+  };
 
   return (
-    <div className="pokemon-card">
-      <Link to={`/pokemon/${pokemon.id}`} className="pokemon-link">
-        <img src={pokemon.image} alt={pokemon.name} />
-        <h3>{pokemon.name}</h3>
-        <p>Type: {pokemon.types.join(', ')}</p>
-      </Link>
-
-      <div className="pokemon-card-actions">
-        <FavoriteButton
-          isFavorite={isFavorite}
-          onClick={() => toggleFavorite(pokemon.id)}
-        />
-
-        <button
-          className={`compare-btn ${isInCompare ? 'active' : ''}`}
-          onClick={() => toggleCompare(pokemon)}
-        >
-          {isInCompare ? 'Remove' : 'Compare'}
-        </button>
-      </div>
+    <div className={`pokemon-card ${isInCompareList ? 'selected' : ''}`}>
+      <img
+        src={pokemon.sprites?.front_default}
+        alt={pokemon.name}
+        className="pokemon-img"
+      />
+      <h3 className="pokemon-name">{pokemon.name}</h3>
+      <button onClick={handleCompareClick} className="compare-btn">
+        {isInCompareList ? 'Remove from Compare' : 'Add to Compare'}
+      </button>
     </div>
   );
-};
+}
 
 export default PokemonCard;
