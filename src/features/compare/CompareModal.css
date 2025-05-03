@@ -1,0 +1,55 @@
+.compare-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .compare-modal {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 90%;
+    width: 1000px;
+    max-height: 90%;
+    overflow-y: auto;
+    position: relative;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  .compare-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .compare-card {
+    background: #f0f0f0;
+    padding: 1rem;
+    flex: 1 1 30%;
+    border-radius: 8px;
+    text-align: center;
+  }
+  .app-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 
+
 const PokemonDetailPage = () => { 
   const { id } = useParams();
   const [pokemon, setPokemon] = useState(null);

@@ -1,20 +1,61 @@
-.compare-btn {
-    padding: 6px 12px;
-    border: 1px solid #666;
-    background-color: #f3f3f3;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-left: 8px;
-    transition: background-color 0.2s ease;
-  }
-  
-  .compare-btn:hover {
-    background-color: #ddd;
-  }
-  
-  .compare-btn.active {
-    background-color: #d1eaff;
-    border-color: #007bff;
-    font-weight: bold;
-  }
-  
+.pokemon-card {
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 16px;
+  margin: 12px;
+  width: 220px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.pokemon-card:hover {
+  transform: scale(1.03);
+}
+
+.pokemon-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+
+.pokemon-card h3 {
+  margin: 10px 0 5px;
+  text-transform: capitalize;
+  color: #333;
+}
+
+.pokemon-card p {
+  font-size: 14px;
+  margin: 5px 0;
+  color: #555;
+}
+
+.pokemon-card button {
+  margin: 6px 4px;
+  padding: 6px 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  transition: background 0.2s;
+}
+
+.pokemon-card button:hover {
+  background-color: #d4d4d4;
+}
+
+.pokemon-card .compared {
+  border-color: #3b82f6;
+  background-color: #e0f0ff;
+}
+/* src/components/styles/PokemonCard.css */
+.pokemon-card {
+  transition: transform 0.2s ease;
+}
+
+.pokemon-card:hover {
+  transform: scale(1.05);
+}

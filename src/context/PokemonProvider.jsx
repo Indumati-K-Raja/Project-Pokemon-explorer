@@ -35,12 +35,16 @@ export const PokemonProvider = ({ children }) => {
     fetchData();
   }, []);
 
-  const addToCompare = (pokemon) => {
-    setCompareList((prevList) =>
-      prevList.some((p) => p.id === pokemon.id) ? prevList : [...prevList, pokemon]
-    );
-  };
+  
 
+
+  const addToCompare = (pokemon) => {
+    setCompareList((prevList) => {
+      if (prevList.find((p) => p.id === pokemon.id)) return prevList;
+      return [...prevList, pokemon];
+    });
+  };
+  
   const removeFromCompare = (pokemonId) => {
     setCompareList((prevList) => prevList.filter((p) => p.id !== pokemonId));
   };
@@ -55,11 +59,11 @@ export const PokemonProvider = ({ children }) => {
     setFavorites((prev) => prev.filter((fav) => fav.id !== pokemonId));
   };
 
-  const toggleFavorite = (id) => {
+  const toggleFavorite = (pokemonId) => {
     setFavorites((prev) =>
-      prev.some((p) => p.id === id)
-        ? prev.filter((p) => p.id !== id)
-        : [...prev, pokemonList.find((p) => p.id === id)]
+      prev.includes(pokemonId)
+        ? prev.filter((id) => id !== pokemonId)
+        : [...prev, pokemonId]
     );
   };
 

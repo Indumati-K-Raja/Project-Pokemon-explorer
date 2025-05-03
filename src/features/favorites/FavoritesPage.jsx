@@ -1,11 +1,12 @@
-// features/favorites/FavoritesPage.jsx
 import React from 'react';
 import { usePokemonContext } from '../../context/PokemonContext';
 
 const FavoritesPage = () => {
-  const { favorites, removeFromFavorites } = usePokemonContext();
+  const { favorites, pokemonList, toggleFavorite } = usePokemonContext();
 
-  if (favorites.length === 0) {
+  const favoritePokemons = pokemonList.filter(p => favorites.includes(p.id));
+
+  if (favoritePokemons.length === 0) {
     return <div style={{ padding: '2rem' }}>No favorites added yet.</div>;
   }
 
@@ -13,7 +14,7 @@ const FavoritesPage = () => {
     <div style={{ padding: '2rem' }}>
       <h2>Favorite Pokémon</h2>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
-        {favorites.map((pokemon) => (
+        {favoritePokemons.map((pokemon) => (
           <div
             key={pokemon.id}
             style={{
@@ -26,7 +27,7 @@ const FavoritesPage = () => {
           >
             <img src={pokemon.sprites.front_default} alt={pokemon.name} />
             <h4 style={{ textTransform: 'capitalize' }}>{pokemon.name}</h4>
-            <button onClick={() => removeFromFavorites(pokemon.id)}>
+            <button onClick={() => toggleFavorite(pokemon.id)}>
               Remove
             </button>
           </div>

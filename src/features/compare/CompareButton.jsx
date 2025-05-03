@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
-import { usePokemonContext } from '../context/PokemonContext';
+import { usePokemonContext } from '../../context/PokemonContext';
 import { toast } from 'react-toastify';
+//import CompareModal from './CompareModal'; // Assuming you have a CompareModal component
+import './CompareButton.css'; // Assuming you have some CSS for styling
 
 const CompareButton = ({ pokemon }) => {
   const { compareList, addToCompare, removeFromCompare } = useContext(usePokemonContext);
